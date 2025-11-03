@@ -9,19 +9,16 @@
 </head>
 
 <body>
-    <header>
-        <h2>Welcome to my site </h2>
-        <nav>
-            <a href="/feedback">FeedBack</a>
-        </nav>
-    </header>
-    <main>
-        {% block content %}
-        {% endblock %}
-    </main>
-    <footer>
-        <p>&copy;2025 FeedBack footer</p>
-    </footer>
+    <h1>Flask WTF Registration Form</h1>
+    {% with messages = get_flashed_messages(with_categories = True) %}
+    {% if messages %}
+    {% for category, msg in messages %}
+    <!-- <p class="{{category}}">{{msg}}</p> -->
+    <p style="color: green;">{{msg}}</p>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    {% block content %} {% endblock %}
 </body>
 
 </html>
