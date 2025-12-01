@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Sample</title>
-</head>
+{% block title %}Form Page{% endblock %}
 
-<body>
-    <form action="/submit" method="POST">
-        <input type="text" name="username" placeholder="Enter your username">
-        <input type="text" name="password" placeholder="Enter your password">
-        <input type="submit" value="Login">
-    </form>
-</body>
+{% block content %}
+<h2>Send Your Feedback </h2>
+<form action="/" method="POST">
+    <label for="username">Name:</label>
+    <br>
+    <input type="text" id="username" name="name" placeholder="Enter your name...">
+    <br>
+    <br>
 
-</html>
+    <input type="submit" value="Submit Feedback">
+
+</form>
+{% endblock %}
